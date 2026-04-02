@@ -1,0 +1,5 @@
+dist/** linguist-generated=true
+package-lock.json linguist-generated=true
+scripts/** linguist-vendored=true
+eslint.config.mjs linguist-vendored=true
+.vscode/** linguist-vendored=true

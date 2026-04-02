@@ -14,12 +14,6 @@ Syntax Outline keeps the active syntax color as the contour of each token and le
 
 ## Settings
 
-```json
-{
-  "syntaxOutline.fillColor": "rgba(12, 18, 31, 0.96)"
-}
-```
-
 Set `syntaxOutline.fillColor` to a hex, rgb, hsl, or rgba value if you want a custom inner color:
 
 ```json

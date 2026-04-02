@@ -1,0 +1,80 @@
+{
+  "name": "syntax-outline",
+  "displayName": "Syntax Outline",
+  "description": "Outline editor text with each token's current syntax color and an optional inner fill.",
+  "version": "0.1.0",
+  "publisher": "penromain",
+  "packageManager": "npm@10.8.2",
+  "license": "MIT",
+  "icon": "assets/icon.png",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "outlined text",
+    "text outline",
+    "syntax highlighting",
+    "decorations",
+    "editor style",
+    "stroke text",
+    "outlined code",
+    "typography"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PenRomain/keyword-capsules.git"
+  },
+  "homepage": "https://github.com/PenRomain/keyword-capsules#readme",
+  "bugs": {
+    "url": "https://github.com/PenRomain/keyword-capsules/issues"
+  },
+  "main": "./dist/extension.js",
+  "files": [
+    "dist",
+    "assets",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "configuration": {
+      "title": "Syntax Outline",
+      "properties": {
+        "syntaxOutline.fillColor": {
+          "type": "string",
+          "default": "rgba(12, 18, 31, 0.96)",
+          "markdownDescription": "Inner fill color for outlined text."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node ./scripts/esbuild.mjs",
+    "watch": "node ./scripts/esbuild.mjs --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit -p ./",
+    "generate:icon": "node ./scripts/generate-icon.mjs",
+    "vscode:prepublish": "npm run build",
+    "package": "npm run build && vsce package",
+    "publish:marketplace": "npm run build && vsce publish"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.24.0",
+    "@types/node": "^22.15.3",
+    "@types/vscode": "^1.90.0",
+    "@vscode/vsce": "^3.6.2",
+    "esbuild": "^0.25.3",
+    "eslint": "^9.24.0",
+    "globals": "^16.0.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.29.0"
+  }
+}
